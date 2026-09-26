@@ -57,7 +57,7 @@ final class Registry
     'FenxiaoWarehouseQueryWarehouseList' => ['class' => \Is4ngle\AlibabaOpen\Api\Fenxiao\FenxiaoWarehouseQueryWarehouseListRequest::class, 'api' => 'com.alibaba.fenxiao:fenxiao.warehouse.queryWarehouseList-1'],
     'ProductDistributeCntGet' => ['class' => \Is4ngle\AlibabaOpen\Api\Fenxiao\ProductDistributeCntGetRequest::class, 'api' => 'com.alibaba.fenxiao:product.distributeCnt.get-1'],
     'ProductDistributeCntPut' => ['class' => \Is4ngle\AlibabaOpen\Api\Fenxiao\ProductDistributeCntPutRequest::class, 'api' => 'com.alibaba.fenxiao:product.distributeCnt.put-1'],
-    'ProductKeywordsSearch' => ['class' => \Is4ngle\AlibabaOpen\Api\Fenxiao\ProductKeywordsSearchRequest::class, 'api' => 'com.alibaba.fenxiao:productKeywordsSearch-1'],
+    'ProductKeywordsSearch' => ['class' => \Is4ngle\AlibabaOpen\Api\Fenxiao\ProductKeywordsSearchRequest::class, 'api' => 'com.alibaba.fenxiao:product.keywords.search-1'],
     'RefundAddressGet' => ['class' => \Is4ngle\AlibabaOpen\Api\Fenxiao\RefundAddressGetRequest::class, 'api' => 'com.alibaba.fenxiao:refundAddress.get-1'],
     'SupplyOfferFetchIdList' => ['class' => \Is4ngle\AlibabaOpen\Api\Fenxiao\SupplyOfferFetchIdListRequest::class, 'api' => 'com.alibaba.fenxiao:supply.offer.fetchIdList-1'],
     'SupplyRecommendChangeOfferStartTask' => ['class' => \Is4ngle\AlibabaOpen\Api\Fenxiao\SupplyRecommendChangeOfferStartTaskRequest::class, 'api' => 'com.alibaba.fenxiao:supply.recommendChangeOffer.startTask-1'],

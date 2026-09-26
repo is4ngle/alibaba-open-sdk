@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Fenxiao;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.fenxiao:productKeywordsSearch-1
+ * API: com.alibaba.fenxiao:product.keywords.search-1
  * 生成自官方 SDK 参数类 ProductKeywordsSearchParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class ProductKeywordsSearchRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class ProductKeywordsSearchRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'productKeywordsSearch';
+        return 'product.keywords.search';
     }
 
     /** 限定类目ID列表，从类目搜索接口获取 | 示例: ["10166"] */

@@ -25,9 +25,9 @@ final class GeneratedRequestTest extends TestCase
         $req->filter = ['fxBrandOffer'];
 
         $this->assertSame('com.alibaba.fenxiao', $req->getNamespace());
-        $this->assertSame('productKeywordsSearch', $req->getApiName());
+        $this->assertSame('product.keywords.search', $req->getApiName());
         $this->assertSame(1, $req->getVersion());
-        $this->assertSame('com.alibaba.fenxiao:productKeywordsSearch-1', $req->toApiId());
+        $this->assertSame('com.alibaba.fenxiao:product.keywords.search-1', $req->toApiId());
 
         $params = $req->toParams();
         // 全部字段包在 param 键下
@@ -90,7 +90,7 @@ final class GeneratedRequestTest extends TestCase
         $found = Registry::find('ProductKeywordsSearch');
         $this->assertNotNull($found);
         $this->assertSame(ProductKeywordsSearchRequest::class, $found['class']);
-        $this->assertSame('com.alibaba.fenxiao:productKeywordsSearch-1', $found['api']);
+        $this->assertSame('com.alibaba.fenxiao:product.keywords.search-1', $found['api']);
 
         $this->assertNull(Registry::find('NotExist'));
     }
