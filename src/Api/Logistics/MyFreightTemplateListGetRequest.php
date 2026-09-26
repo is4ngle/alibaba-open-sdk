@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Logistics;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.logistics:alibaba.logistics.myFreightTemplateList.get-1
+ * API: com.alibaba.logistics:alibaba.logistics.myFreightTemplate.listGet-1
  * 生成自官方 SDK 参数类 AlibabaLogisticsMyFreightTemplateListGetParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class MyFreightTemplateListGetRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class MyFreightTemplateListGetRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'alibaba.logistics.myFreightTemplateList.get';
+        return 'alibaba.logistics.myFreightTemplate.listGet';
     }
 
     /** 模版id，用于单条查询的场景 | 示例: xxx */

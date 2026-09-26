@@ -7,9 +7,8 @@ namespace Is4ngle\AlibabaOpen\Api\Fenxiao;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.fenxiao:buyerOutshopAdd-1
+ * API: com.alibaba.fenxiao:alibaba.fenxiao.buyer.outshop.add-1
  * 生成自官方 SDK 参数类 AlibabaFenxiaoBuyerOutshopAddParam（bin/generate.php，勿手改，重跑覆盖）
- * @todo 联调核对 apiName（驼峰还原可能有歧义，报 gw.APIUnsupported 时改 bin/generate.php 的 API_NAME_OVERRIDES 后重跑）
  */
 final class BuyerOutshopAddRequest extends AbstractRequest
 {
@@ -20,7 +19,7 @@ final class BuyerOutshopAddRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'buyerOutshopAdd';
+        return 'alibaba.fenxiao.buyer.outshop.add';
     }
 
     /** 下游分销店铺编号 | 示例: 345677，举例：淘宝平台，传用户授权工具的下游user id（注意：别传任何字符、标点符号） */

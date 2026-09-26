@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Fenxiao;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.fenxiao:alibaba.fenxiao.product.info.get-1
+ * API: com.alibaba.fenxiao:alibaba.fenxiao.productInfo.get-1
  * 生成自官方 SDK 参数类 AlibabaFenxiaoProductInfoGetParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class ProductInfoGetRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class ProductInfoGetRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'alibaba.fenxiao.product.info.get';
+        return 'alibaba.fenxiao.productInfo.get';
     }
 
     /** 1688商品ID | 示例: 573741401425 */

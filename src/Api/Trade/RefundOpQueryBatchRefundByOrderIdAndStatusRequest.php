@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Trade;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.trade:alibaba.trade.refundOpQueryBatchRefundByOrderIdAndStatus-1
+ * API: com.alibaba.trade:alibaba.trade.refund.OpQueryBatchRefundByOrderIdAndStatus-1
  * 生成自官方 SDK 参数类 AlibabaTradeRefundOpQueryBatchRefundByOrderIdAndStatusParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class RefundOpQueryBatchRefundByOrderIdAndStatusRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class RefundOpQueryBatchRefundByOrderIdAndStatusRequest extends AbstractRe
 
     public function getApiName(): string
     {
-        return 'alibaba.trade.refundOpQueryBatchRefundByOrderIdAndStatus';
+        return 'alibaba.trade.refund.OpQueryBatchRefundByOrderIdAndStatus';
     }
 
     /** 订单id | 示例: 151267031**8969811 */

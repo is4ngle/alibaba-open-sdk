@@ -47,37 +47,90 @@ const NS_SEGMENT = [
     'cn.alibaba.open'                => 'CnOpen',
 ];
 
-/** 人工核对的 apiName（key = Param 类名去掉 Param 后缀；未列出的用启发式推导并标 @todo） */
+/** 人工核对的 apiName（key = Param 类名去掉 Param 后缀；未列出的用启发式推导并标 @todo）
+ *  来源标注：[gw] = 本应用真实网关验证；[go] = go.yanco 生产系统（同 appKey）验证 */
 const API_NAME_OVERRIDES = [
-    // 已验证（真实网关调用过）
-    'AlibabaTradeGetBuyerOrderList' => 'alibaba.trade.getBuyerOrderList',
-    // 高置信（官方文档/社区常见）
-    'AlibabaTradeGetBuyerView'      => 'alibaba.trade.get.buyerView',
+    // ---- 商品/选品 ----
+    'ProductKeywordsSearch'         => 'product.keywords.search',              // [gw]
+    'ProductKeywordSearch'          => 'product.keyword.search',               // [go] 注意与分销版单复数差异
+    'AlibabaFenxiaoProductInfoGet'  => 'alibaba.fenxiao.productInfo.get',      // [go]
+    'AlibabaPublicImageSimilarOfferSearch' => 'alibaba.public.imageSimilarOfferSearch', // [go]
+    'AlibabaCategoryGet'            => 'alibaba.category.get',                 // [gw]
+    'AlibabaCategorySearchByKeyword' => 'alibaba.category.searchByKeyword',
+    'AlibabaProductFollow'          => 'alibaba.product.follow',               // [go]
+    'AlibabaProductUnfollowCrossborder' => 'alibaba.product.unfollowCrossborder',
+    'ProductSkuinfoGet'             => 'product.skuinfo.get',
+    'FenxiaoSourcingGetHotCategorys' => 'fenxiao.sourcing.getHotCategorys',    // [go]
+
+    // ---- 分销关系 ----
+    'AlibabaFenxiaoRelationadd'     => 'alibaba.fenxiao.relationadd',          // [go]
+    'AlibabaFenxiaoBuyerOutproductRelationAdd' => 'alibaba.fenxiao.buyer.outproduct.relation.add',    // [go]
+    'AlibabaFenxiaoBuyerOutproductRelationDelete' => 'alibaba.fenxiao.buyer.outproduct.relation.delete', // [go]
+    'AlibabaFenxiaoBuyerOutproductRelationGet' => 'alibaba.fenxiao.buyer.outproduct.relation.get',    // [go]
+    'AlibabaFenxiaoBuyerOutshopAdd' => 'alibaba.fenxiao.buyer.outshop.add',    // [go]
+    'AlibabaFenxiaoBuyerOutshopDelete' => 'alibaba.fenxiao.buyer.outshop.delete', // [go]
+    'AlibabaFenxiaoChosenOfferlistGet' => 'alibaba.fenxiao.chosenOfferlist.get', // [go]
+    'AlibabaFenxiaoChosenOfferlistRemoveall' => 'alibaba.fenxiao.chosenOfferlist.removeall', // [go]
+
+    // ---- 交易/订单 ----
+    'AlibabaTradeGetBuyerOrderList' => 'alibaba.trade.getBuyerOrderList',      // [gw]
+    'AlibabaTradeGetBuyerView'      => 'alibaba.trade.get.buyerView',          // [go]
     'AlibabaTradeFastCreateOrder'   => 'alibaba.trade.fastCreateOrder',
-    'AlibabaCreateOrderPreview'     => 'alibaba.createOrder.preview',
-    'ProductKeywordsSearch'         => 'product.keywords.search',   // ✅ 2026-09-26 服务器实测通过
-    'ProductKeywordSearch'          => 'productKeywordSearch',
-    'AlibabaFenxiaoProductInfoGet'  => 'alibaba.fenxiao.product.info.get',
-    'AlibabaFenxiaoRelationadd'     => 'alibaba.fenxiao.relationadd',
-    'AlibabaFenxiaoChosenOfferlistGet' => 'alibaba.fenxiao.chosenOfferlist.get',
-    'AlibabaFenxiaoChosenOfferlistRemoveall' => 'alibaba.fenxiao.chosenOfferlist.removeall',
-    'AlibabaFeedbackOutProductAdd'  => 'alibaba.feedback.out.product.add',
-    'AlibabaTradeGetLogisticsInfosBuyerView' => 'alibaba.trade.getLogisticsInfos.buyerView',
-    'AlibabaTradeGetLogisticsTraceInfoBuyerView' => 'alibaba.trade.getLogisticsTraceInfo.buyerView',
+    'AlibabaCreateOrderPreview'     => 'alibaba.createOrder.preview',          // [go]
+    'AlibabaTradeFenxiaoOrderCreate' => 'alibaba.trade.fenxiaoOrder.create',   // [go]
+    'AlibabaTradeCreateFenxiaoOrderPreview' => 'alibaba.trade.createFenxiaoOrder.preview', // [go]
+    'AlibabaTradeCancel'            => 'alibaba.trade.cancel',                 // [go]
+    'AlibabaOrderMemoAdd'           => 'alibaba.order.memoAdd',                // [go]
+    'TradeReceivegoodsConfirm'      => 'trade.receivegoods.confirm',           // [go] 注意不带 alibaba. 前缀
+    'OrderReceiveAddressBuyerUpdate' => 'orderReceiveAddressBuyerUpdate',
+    'AlibabaAccountPeriodListBuyerView' => 'alibaba.accountPeriodListBuyerView',
+
+    // ---- 支付 ----
+    'AlibabaTradePayProtocolPayIsopen' => 'alibaba.trade.pay.protocolPay.isopen',    // [go]
+    'AlibabaTradePayProtocolPayPreparePay' => 'alibaba.trade.pay.protocolPay.preparePay', // [go]
+    'AlibabaTradeGrouppayUrlGet'    => 'alibaba.trade.grouppay.url.get',      // [go]
+    'AlibabaTradePayWayQuery'       => 'alibaba.trade.payWayQuery',
+
+    // ---- 退款 ----
+    'AlibabaTradeCreateRefund'      => 'alibaba.trade.createRefund',          // [go]
+    'AlibabaTradeCancelRefund'      => 'alibaba.trade.cancelRefund',          // [go]
+    'AlibabaTradeGetRefundReasonList' => 'alibaba.trade.getRefundReasonList', // [go]
+    'AlibabaTradeUploadRefundVoucher' => 'alibaba.trade.uploadRefundVoucher', // [go]
+    'AlibabaTradeRefundOpQueryOrderRefund' => 'alibaba.trade.refund.OpQueryOrderRefund', // [go] Op 大写
+    'AlibabaTradeRefundBuyerQueryOrderRefundList' => 'alibaba.trade.refund.buyerQueryOrderRefundList', // [go]
+    'AlibabaTradeRefundOpQueryOrderRefundOperationList' => 'alibaba.trade.refund.OpQueryOrderRefundOperationList', // [go]
+    'AlibabaTradeRefundOpQueryBatchRefundByOrderIdAndStatus' => 'alibaba.trade.refund.OpQueryBatchRefundByOrderIdAndStatus', // [go]
+    'AlibabaTradeRefundReturnGoods' => 'alibaba.trade.refund.returnGoods',    // [go]
+    'AlibabaTradeGetMaxRefundFee'   => 'alibaba.trade.getMaxRefundFee',
+
+    // ---- 物流 ----
+    'AlibabaTradeGetLogisticsInfosBuyerView' => 'alibaba.trade.getLogisticsInfos.buyerView',  // [gw][go]
+    'AlibabaTradeGetLogisticsTraceInfoBuyerView' => 'alibaba.trade.getLogisticsTraceInfo.buyerView', // [gw][go]
+    'AlibabaLogisticsMyFreightTemplateListGet' => 'alibaba.logistics.myFreightTemplate.listGet', // [go] 官方文档不一致，备用 alibaba.logistics.freightTemplate.getList
+    'LogisticsDeliveryUrge'         => 'logistics.deliveryUrge',
+    'WarehouseOrderOutbound'        => 'warehouse.order.outbound',
+    'AlibabaLogisticsOpQueryLogisticCompanyList' => 'alibaba.logistics.op.queryLogisticCompanyList',
+    'AlibabaLogisticsOpQueryLogisticCompanyListOffline' => 'alibaba.logistics.op.queryLogisticCompanyListOffline',
+
+    // ---- 账号/其他 ----
+    'AlibabaAccountBasic'           => 'alibaba.account.basic',                // [go]
+    'AccountWangwangUrlGet'         => 'account.wangwang.url.get',
+    'OpenAgentDeepSearch'           => 'open.agent.deepSearch',
+    'OpenAgentSupplyChange'         => 'open.agent.supplyChange',
+    'OpenAgentSupplyChangeDataFeedback' => 'open.agent.supplyChangeDataFeedback',
+    'RefundAddressGet'              => 'refundAddress.get',
+
+    // ---- 跨境/工业/营销（保持原推导） ----
     'PoolProductPull'               => 'pool.product.pull',
-    'SupplyOfferFetchIdList'        => 'supply.offer.fetchIdList',
-    'SupplySimilarOfferSearch'      => 'supply.similarOffer.search',
-    'SupplyRecommendChangeOfferStartTask' => 'supply.recommendChangeOffer.startTask',
-    'SupplyTaskStop'                => 'supply.task.stop',
-    'DkeyGet'                       => 'dkey.get',
-    'ProductDistributeCntGet'       => 'product.distributeCnt.get',
-    'ProductDistributeCntPut'       => 'product.distributeCnt.put',
+    'QycgSelfOpItemGetList'         => 'qycg.selfOpItem.getList',
+    'CouponOptimalClaim'            => 'coupon.optimalClaim',
+
+    // ---- 寻源/监控/云仓/铺货计数 ----
     'FenxiaoSourcingCreateSourcingRequisition' => 'fenxiao.sourcing.createSourcingRequisition',
     'FenxiaoSourcingCreateTopicRequisition' => 'fenxiao.sourcing.createTopicRequisition',
     'FenxiaoSourcingCreateSourcingOperation' => 'fenxiao.sourcing.createSourcingOperation',
     'FenxiaoSourcingGetSourcingRequisitionList' => 'fenxiao.sourcing.getSourcingRequisitionList',
     'FenxiaoSourcingGetSourcingResultList' => 'fenxiao.sourcing.getSourcingResultList',
-    'FenxiaoSourcingGetHotCategorys' => 'fenxiao.sourcing.getHotCategorys',
     'FenxiaoSourcingGetTopicCalendarList' => 'fenxiao.sourcing.getTopicCalendarList',
     'FenxiaoSourcingCheckSourcingRequirement' => 'fenxiao.sourcing.checkSourcingRequirement',
     'FenxiaoSupplyAddMonitorProduct' => 'fenxiao.supply.addMonitorProduct',
@@ -88,58 +141,28 @@ const API_NAME_OVERRIDES = [
     'FenxiaoWarehouseQueryWarehouseList' => 'fenxiao.warehouse.queryWarehouseList',
     'FenxiaoWarehouseCheckWarehouseOpenStatus' => 'fenxiao.warehouse.checkWarehouseOpenStatus',
     'FenxiaoOrderCreateReverseOrder' => 'fenxiao.order.createReverseOrder',
-    'AlibabaTradeFenxiaoOrderCreate' => 'alibaba.trade.fenxiaoOrder.create',
-    'AlibabaTradeCreateFenxiaoOrderPreview' => 'alibaba.trade.createFenxiaoOrder.preview',
-    'CouponOptimalClaim'            => 'coupon.optimalClaim',
-    'QycgSelfOpItemGetList'         => 'qycg.selfOpItem.getList',
-    'TradeReceivegoodsConfirm'      => 'trade.receivegoodsConfirm',
+    'SupplyOfferFetchIdList'        => 'supply.offer.fetchIdList',
+    'SupplySimilarOfferSearch'      => 'supply.similarOffer.search',
+    'SupplyRecommendChangeOfferStartTask' => 'supply.recommendChangeOffer.startTask',
+    'SupplyTaskStop'                => 'supply.task.stop',
+    'DkeyGet'                       => 'dkey.get',
+    'ProductDistributeCntGet'       => 'product.distributeCnt.get',
+    'ProductDistributeCntPut'       => 'product.distributeCnt.put',
+    'AlibabaFeedbackOutProductAdd'  => 'alibaba.feedback.out.product.add',
+    'AlibabaCnAlibabaOpenTradeOrderReceiveGoods' => 'alibaba.cn.alibaba.open.trade.order.receiveGoods',
+    'AlibabaTradeAddresscodeGet'    => 'alibaba.trade.addresscode.get',
+    'AlibabaTradeAddresscodeGetchild' => 'alibaba.trade.addresscode.getchild',
+    'AlibabaTradeAddresscodeParse'  => 'alibaba.trade.addresscode.parse',
+
+    // ---- 发票/复购（未验证，保留推导名） ----
     'TradeInvoiceApply'             => 'trade.invoice.apply',
     'TradeInvoiceApplyGetPageListBuyerView' => 'trade.invoiceApplyGetPageListBuyerView',
     'TradeInvoiceGetListBuyerView'  => 'trade.invoiceGetListBuyerView',
     'TradeInvoiceAmountGetList'     => 'trade.invoiceAmountGetList',
     'TradeInvoiceTitleAdd'          => 'trade.invoiceTitleAdd',
     'TradeInvoiceTitleGetPageList'  => 'trade.invoiceTitleGetPageList',
-    'AlibabaOrderMemoAdd'           => 'alibaba.orderMemo.add',
-    'AlibabaAccountBasic'           => 'alibaba.account.basic',
-    'AlibabaOpenofferRedirect'      => 'alibaba.openoffer.redirect',
-    'AlibabaCategoryGet'            => 'alibaba.category.get',
-    'AlibabaCategorySearchByKeyword' => 'alibaba.category.searchByKeyword',
-    'AlibabaCnAlibabaOpenTradeOrderReceiveGoods' => 'alibaba.cn.alibaba.open.trade.order.receiveGoods',
-    'AlibabaTradeAddresscodeGet'    => 'alibaba.trade.addresscode.get',
-    'AlibabaTradeAddresscodeGetchild' => 'alibaba.trade.addresscode.getchild',
-    'AlibabaTradeAddresscodeParse'  => 'alibaba.trade.addresscode.parse',
-    'AlibabaTradeCancel'            => 'alibaba.trade.cancel',
-    'AlibabaTradeCancelRefund'      => 'alibaba.trade.cancelRefund',
-    'AlibabaTradeCreateRefund'      => 'alibaba.trade.createRefund',
-    'AlibabaTradeGetMaxRefundFee'   => 'alibaba.trade.getMaxRefundFee',
-    'AlibabaTradeGetRefundReasonList' => 'alibaba.trade.getRefundReasonList',
-    'AlibabaTradeGrouppayUrlGet'    => 'alibaba.trade.grouppayUrlGet',
-    'AlibabaTradePayWayQuery'       => 'alibaba.trade.payWayQuery',
-    'AlibabaTradePayProtocolPayIsopen' => 'alibaba.trade.payProtocolPayIsopen',
-    'AlibabaTradePayProtocolPayPreparePay' => 'alibaba.trade.payProtocolPayPreparePay',
-    'AlibabaAccountPeriodListBuyerView' => 'alibaba.accountPeriodListBuyerView',
-    'OrderReceiveAddressBuyerUpdate' => 'orderReceiveAddressBuyerUpdate',
     'RepurchaseContractGet'         => 'repurchaseContract.get',
-    'LogisticsDeliveryUrge'         => 'logistics.deliveryUrge',
-    'WarehouseOrderOutbound'        => 'warehouse.order.outbound',
-    'AlibabaLogisticsOpQueryLogisticCompanyList' => 'alibaba.logistics.op.queryLogisticCompanyList',
-    'AlibabaLogisticsOpQueryLogisticCompanyListOffline' => 'alibaba.logistics.op.queryLogisticCompanyListOffline',
-    'AlibabaLogisticsMyFreightTemplateListGet' => 'alibaba.logistics.myFreightTemplateList.get',
-    'AccountWangwangUrlGet'         => 'account.wangwang.url.get',
-    'OpenAgentDeepSearch'           => 'open.agent.deepSearch',
-    'OpenAgentSupplyChange'         => 'open.agent.supplyChange',
-    'OpenAgentSupplyChangeDataFeedback' => 'open.agent.supplyChangeDataFeedback',
-    'RefundAddressGet'              => 'refundAddress.get',
-    'AlibabaTradeRefundBuyerQueryOrderRefundList' => 'alibaba.trade.refundBuyerQueryOrderRefundList',
-    'AlibabaTradeRefundOpQueryOrderRefund' => 'alibaba.trade.refundOpQueryOrderRefund',
-    'AlibabaTradeRefundOpQueryOrderRefundOperationList' => 'alibaba.trade.refundOpQueryOrderRefundOperationList',
-    'AlibabaTradeRefundOpQueryBatchRefundByOrderIdAndStatus' => 'alibaba.trade.refundOpQueryBatchRefundByOrderIdAndStatus',
-    'AlibabaTradeRefundReturnGoods' => 'alibaba.trade.refundReturnGoods',
-    'AlibabaTradeUploadRefundVoucher' => 'alibaba.trade.uploadRefundVoucher',
-    'AlibabaProductFollow'          => 'alibaba.product.follow',
-    'AlibabaProductUnfollowCrossborder' => 'alibaba.product.unfollowCrossborder',
-    'ProductSkuinfoGet'             => 'product.skuinfo.get',
-    'AlibabaPublicImageSimilarOfferSearch' => 'alibaba.public.image.similarOffer.search',
+    'AlibabaOpenofferRedirect'      => 'alibaba.openoffer.redirect',
 ];
 
 /** 标量类型白名单（其余类型名视为内层模型类引用） */

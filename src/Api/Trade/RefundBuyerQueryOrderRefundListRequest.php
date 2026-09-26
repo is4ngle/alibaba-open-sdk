@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Trade;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.trade:alibaba.trade.refundBuyerQueryOrderRefundList-1
+ * API: com.alibaba.trade:alibaba.trade.refund.buyerQueryOrderRefundList-1
  * 生成自官方 SDK 参数类 AlibabaTradeRefundBuyerQueryOrderRefundListParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class RefundBuyerQueryOrderRefundListRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class RefundBuyerQueryOrderRefundListRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'alibaba.trade.refundBuyerQueryOrderRefundList';
+        return 'alibaba.trade.refund.buyerQueryOrderRefundList';
     }
 
     /** 订单Id | 示例: 179087886005498520 */

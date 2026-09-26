@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Product;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.product:alibaba.public.image.similarOffer.search-1
+ * API: com.alibaba.product:alibaba.public.imageSimilarOfferSearch-1
  * 生成自官方 SDK 参数类 AlibabaPublicImageSimilarOfferSearchParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class AlibabaPublicImageSimilarOfferSearchRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class AlibabaPublicImageSimilarOfferSearchRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'alibaba.public.image.similarOffer.search';
+        return 'alibaba.public.imageSimilarOfferSearch';
     }
 
     /** 待查询图片的Base64，图片大小不超过3M | 示例: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAACgCAMAAABE1DvBAAAAflBMVEX////sM1j09PTsL1X/+vv5xs/sLVTrJE7rH0vrJU/rKFHwa4P+9/n5xM7/+vz+7vHrGEj0lab+8/bvW3b84OX60djyepD4tcH72N7uRmf4usX6zNTwYHvwZoDwbYbL" */

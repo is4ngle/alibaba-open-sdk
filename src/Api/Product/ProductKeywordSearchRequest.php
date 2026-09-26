@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Product;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.product:productKeywordSearch-1
+ * API: com.alibaba.product:product.keyword.search-1
  * 生成自官方 SDK 参数类 ProductKeywordSearchParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class ProductKeywordSearchRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class ProductKeywordSearchRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'productKeywordSearch';
+        return 'product.keyword.search';
     }
 
     /** 关键词 | 示例: 帐篷 */

@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Trade;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.trade:alibaba.trade.payProtocolPayPreparePay-1
+ * API: com.alibaba.trade:alibaba.trade.pay.protocolPay.preparePay-1
  * 生成自官方 SDK 参数类 AlibabaTradePayProtocolPayPreparePayParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class PayProtocolPayPreparePayRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class PayProtocolPayPreparePayRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'alibaba.trade.payProtocolPayPreparePay';
+        return 'alibaba.trade.pay.protocolPay.preparePay';
     }
 
     public ?string $accountType = null;

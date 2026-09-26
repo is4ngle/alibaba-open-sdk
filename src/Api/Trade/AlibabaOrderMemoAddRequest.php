@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Trade;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.trade:alibaba.orderMemo.add-1
+ * API: com.alibaba.trade:alibaba.order.memoAdd-1
  * 生成自官方 SDK 参数类 AlibabaOrderMemoAddParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class AlibabaOrderMemoAddRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class AlibabaOrderMemoAddRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'alibaba.orderMemo.add';
+        return 'alibaba.order.memoAdd';
     }
 
     /** 订单ID | 示例: 1234567 */

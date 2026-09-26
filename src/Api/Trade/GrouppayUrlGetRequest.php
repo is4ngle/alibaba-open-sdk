@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Trade;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.trade:alibaba.trade.grouppayUrlGet-1
+ * API: com.alibaba.trade:alibaba.trade.grouppay.url.get-1
  * 生成自官方 SDK 参数类 AlibabaTradeGrouppayUrlGetParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class GrouppayUrlGetRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class GrouppayUrlGetRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'alibaba.trade.grouppayUrlGet';
+        return 'alibaba.trade.grouppay.url.get';
     }
 
     /** 订单列表 | 示例: [123123413,1223234] */

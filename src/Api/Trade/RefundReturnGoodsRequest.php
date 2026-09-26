@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Trade;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.trade:alibaba.trade.refundReturnGoods-1
+ * API: com.alibaba.trade:alibaba.trade.refund.returnGoods-1
  * 生成自官方 SDK 参数类 AlibabaTradeRefundReturnGoodsParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class RefundReturnGoodsRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class RefundReturnGoodsRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'alibaba.trade.refundReturnGoods';
+        return 'alibaba.trade.refund.returnGoods';
     }
 
     /** 退款单号，TQ开头 | 示例: TQ36706338027991577 */

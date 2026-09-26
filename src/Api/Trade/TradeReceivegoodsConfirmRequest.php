@@ -7,7 +7,7 @@ namespace Is4ngle\AlibabaOpen\Api\Trade;
 use Is4ngle\AlibabaOpen\Request\AbstractRequest;
 
 /**
- * API: com.alibaba.trade:trade.receivegoodsConfirm-1
+ * API: com.alibaba.trade:trade.receivegoods.confirm-1
  * 生成自官方 SDK 参数类 TradeReceivegoodsConfirmParam（bin/generate.php，勿手改，重跑覆盖）
  */
 final class TradeReceivegoodsConfirmRequest extends AbstractRequest
@@ -19,7 +19,7 @@ final class TradeReceivegoodsConfirmRequest extends AbstractRequest
 
     public function getApiName(): string
     {
-        return 'trade.receivegoodsConfirm';
+        return 'trade.receivegoods.confirm';
     }
 
     /** 订单ID | 示例: 56623232655125698 */
