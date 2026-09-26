@@ -1,0 +1,33 @@
+{
+    "name": "is4ngle/alibaba-open-sdk",
+    "description": "Framework-agnostic PHP SDK for 1688 Open Platform (AOP param2 gateway client + message push: HTTP callback & WebSocket)",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "psr/log": "^3.0"
+    },
+    "suggest": {
+        "ext-swoole": "Swoole coroutine WebSocket transport for long-lived push connection",
+        "psr/log": "PSR-3 logging"
+    },
+    "autoload": {
+        "psr-4": {
+            "Is4ngle\\AlibabaOpen\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Is4ngle\\AlibabaOpen\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
