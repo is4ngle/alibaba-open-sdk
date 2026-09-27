@@ -38,6 +38,10 @@ final class ProductKeywordSearchRequest extends AbstractRequest
     public ?int $pageSize = null;
     /** 当前页 | 示例: 1 */
     public ?int $pageNum = null;
+    /** 排序字段，如 price（官方示例值）（EXTRA_FIELDS 补充，官方 Param 类未生成） */
+    public ?string $sortType = null;
+    /** 排序方向 asc/desc（EXTRA_FIELDS 补充，官方 Param 类未生成） */
+    public ?string $sortOrder = null;
 
     protected function wrapKey(): ?string
     {

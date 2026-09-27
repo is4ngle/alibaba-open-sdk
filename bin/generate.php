@@ -165,6 +165,15 @@ const API_NAME_OVERRIDES = [
     'AlibabaOpenofferRedirect'      => 'alibaba.openoffer.redirect',
 ];
 
+/** 生成类补充字段（官方文档示例包含但 Param 类未生成的字段；key = Param 类名去 Param 后缀） */
+const EXTRA_FIELDS = [
+    // 官方文档 product.keyword.search 的 param 示例含 sortType/sortOrder（参数表未列出），实测可用性联调确认
+    'ProductKeywordSearch' => [
+        ['field' => 'sortType', 'type' => 'string', 'doc' => '排序字段，如 price（官方示例值）'],
+        ['field' => 'sortOrder', 'type' => 'string', 'doc' => '排序方向 asc/desc'],
+    ],
+];
+
 /** 标量类型白名单（其余类型名视为内层模型类引用） */
 const SCALAR_TYPES = [
     'string', 'String', 'long', 'Long', 'int', 'Integer', 'boolean', 'Boolean',
@@ -291,6 +300,20 @@ function generateOne(array $api, array $classIndex): ?array
     $props = [];
     foreach ($fields as $f) {
         $props[] = renderProperty($f);
+    }
+
+    // 补充字段（EXTRA_FIELDS）
+    $extra = EXTRA_FIELDS[$classBase] ?? [];
+    foreach ($extra as $f) {
+        $props[] = renderProperty([
+            'field' => $f['field'],
+            'type' => ucfirst($f['type']),
+            'array' => false,
+            'model' => '',
+            'doc' => $f['doc'] . '（EXTRA_FIELDS 补充，官方 Param 类未生成）',
+            'required' => false,
+            'example' => '',
+        ]);
     }
 
     $segment = NS_SEGMENT[$ns];
